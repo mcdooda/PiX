@@ -1,0 +1,18 @@
+PiX by Nicolas DODELIER
+A small ruby nonogram game.
+
+How to run the game:
+$ cd PiX/
+$ ruby pix.rb
+
+Requires (may work with later versions):
+- ruby1.9.1
+- libsdl-ruby1.9.1
+- libopengl-ruby1.9.1
+
+You can create your own puzzles by putting
+png files into the resources/images/grids/
+folder. If the image is larger than
+7 pixels, the digits may be outside of the
+window. The grid is computed using pixels
+whose alpha channel is 255.
