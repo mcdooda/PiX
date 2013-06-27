@@ -85,7 +85,7 @@ module Game
 		end
 		
 		def from_texture?
-			@texture != nil
+			not @texture.nil?
 		end
 		
 		def dbg

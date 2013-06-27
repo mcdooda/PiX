@@ -16,7 +16,11 @@ module Game
 				def enter
 					game = Engine::AppState::StateMachine
 					grid_state = game.state Game::AppState::Grid
-					@completed_grid = grid_state.grid if grid_state.from_texture?
+					if grid_state.from_texture?
+						@completed_grid = grid_state.grid
+					else
+						@completed_grid = nil
+					end
 					
 					num_moves = grid_state.num_moves
 					duration = grid_state.duration
@@ -31,7 +35,7 @@ module Game
 				end
 				
 				def display
-					if @completed_grid
+					unless @completed_grid.nil?
 						@completed_grid.display_completed Engine::Time.time - @begin_time
 						text_pos = Engine::Vector2d.new Conf::WIDTH / 2, 15
 					else
